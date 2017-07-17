@@ -13,17 +13,7 @@ p{
     padding-left: 30px;
 }
 
-.now {
-    float: left;
-    width: 200px;
-    height: 40px;
-    border: 1px solid #dcdcdc;
-	border-radius: 5px;
-    text-align: center;
-    margin-right: 50px;
-}
-
-.target {
+select {
     float: left;
     width: 200px;
     height: 40px;
@@ -59,4 +49,7 @@ span {
 
 .language textarea {
     margin: 0px 20px 0px 20px;
+}
+textarea：focus{
+    outline:none;
 }
