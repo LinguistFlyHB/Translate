@@ -5,10 +5,10 @@
 function trans(){
     //var rawdata = document.getElementById("rawLan").value;
     $.ajax({
-
+        // url: 'translate',
         type: "GET",
-        //data: rawdata,
-        //async:false,
+        // data: rawdata,
+        // async:false,
         success: function(obj){
             var result = JSON.parse(obj)
             document.getElementById("newLan").innerText = result.result;

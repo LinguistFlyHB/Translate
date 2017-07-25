@@ -11,9 +11,10 @@ import json
 
 
 def translate(request):
+    result = ''
     request.encoding = 'utf-8'
     if 'raw' in request.GET:
         message = request.GET['raw']
         result = t.decode(str(message))
-        # result = request
-    return HttpResponse(json.dumps({"result": result}))
+        # result = message
+    return render_to_response('../templates/execute.html', {'english': result, 'french': result})
