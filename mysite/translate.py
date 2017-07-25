@@ -6,14 +6,14 @@ from django.shortcuts import render_to_response
 
 # 表单
 def execute(request):
-    return render_to_response('execute.html')
+    return render_to_response('../templates/execute.html')
 
 
-# 接收请求数据
+# 接收原始语言
 def translate(request):
     request.encoding = 'utf-8'
-    if 'q' in request.GET:
-        message = '你搜索的内容为: ' + request.GET['q']
+    if 'raw' in request.GET:
+        message = request.GET['raw']
     else:
-        message = '你提交了空表单'
+        message = '请输入待翻译语句'
     return HttpResponse(message)
