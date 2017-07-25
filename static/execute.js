@@ -3,12 +3,14 @@
  */
 
 function trans(){
-    var data=document.getElementById("rawLan").value;
-    $ajax({
-        type:"GET",
-        success:function(){
-            document.getElementById("newLan").innerText=data;
+    var raw = document.getElementById("rawLan").value;
+    $.ajax({
+        type: "GET",
+        data: raw,
+        success: function(obj){
+            var result = JSON.parse(obj)
+            document.getElementById("newLan").innerText = result.result;
         }
-    })
+    });
 
 }
