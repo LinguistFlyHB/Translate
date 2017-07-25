@@ -124,7 +124,7 @@ def create_model(session, forward_only):
     return model
 
 
-def tran(sentence):
+def decode(sentence):
     with tf.Session() as sess:
         # Create model and load parameters.
         model = create_model(sess, True)
