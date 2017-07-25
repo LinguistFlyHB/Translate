@@ -3,13 +3,16 @@
  */
 
 function trans(){
-    var raw = document.getElementById("rawLan").value;
+    //var rawdata = document.getElementById("rawLan").value;
     $.ajax({
+
         type: "GET",
-        data: raw,
+        //data: rawdata,
+        //async:false,
         success: function(obj){
             var result = JSON.parse(obj)
             document.getElementById("newLan").innerText = result.result;
+            alert(result.result)
         }
     });
 

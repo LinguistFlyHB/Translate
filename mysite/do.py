@@ -6,8 +6,8 @@ from . import translate as t
 import json
 
 
-def execute(request):
-    return render_to_response('../templates/execute.html')
+# def execute(request):
+#     return render_to_response('../templates/execute.html')
 
 
 def translate(request):

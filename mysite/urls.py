@@ -18,7 +18,7 @@ from django.conf.urls import url
 from . import view,do
 
 urlpatterns = [
-    url(r'^execute$', do.execute),
+    # url(r'^execute$', do.execute),
     url(r'^$', view.hello),
-    url(r'^translate$', do.translate),
+    url(r'^translate$', do.translate,name='fanyi'),
 ]
