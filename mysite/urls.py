@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 
-from . import view,translate
+from . import view,do
 
 urlpatterns = [
-    url(r'^execute$', translate.execute),
+    url(r'^execute$', do.execute),
     url(r'^$', view.hello),
-    url(r'^translate$', translate.translate),
+    url(r'^translate$', do.translate),
 ]

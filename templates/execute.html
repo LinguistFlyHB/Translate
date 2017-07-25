@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Translate</title>
     <link rel="stylesheet" type="text/css" href="../static/main.css">
+    <script src="../static/execute.js"></script>
 </head>
 <body>
     <div class="w1200">
@@ -15,12 +16,12 @@
             <div class="index">
                 <label><span>英语</span></label>
                 <label><span>法语</span></label>
-                <button type="submit" value="Submit" style="font-color:white">翻译</button>
+                <button type="submit" value="Submit" style="font-color:white" onclick="trans();">翻译</button>
             </div>
 
             <div class="language">
-                <textarea rows="20" cols="75" type="text" name="raw"></textarea>
-                <textarea rows="20" cols="75" type="text" style="background-color: #f0f0f0;"></textarea>
+                <textarea rows="20" cols="75" type="text" name="raw" id="rawLan"></textarea>
+                <textarea rows="20" cols="75" type="text" id="newLan" style="background-color: #f0f0f0;"></textarea>
             </div>
         </form>
 
