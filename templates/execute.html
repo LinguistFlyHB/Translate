@@ -10,28 +10,18 @@
         <div>
             <p>Linguist</p>
         </div>
+        <form action="/translate" method="get">
+            <div class="index">
+                <label><span>英语</span></label>
+                <label><span>法语</span></label>
+                <button type="submit" value="Submit" style="font-color:white">翻译</button>
+            </div>
 
-        <div class="index">
-            <select class="now">
-                <option value="cn" selected="selected">中文简体</option>
-                <option value="en">中文繁体</option>
-                <option value="en">英文</option>
-                <option value="ja">日文</option>
-            </select>
-
-            <select class="target">
-                <option value="cn">中文简体</option>
-                <option value="cn">中文繁体</option>
-                <option value="en" selected="selected">英文</option>
-                <option value="ja">日文</option>
-            </select>
-            <button style="font-color:white">翻译</button>
-        </div>
-
-        <div class="language">
-            <textarea rows="20" cols="75"></textarea>
-            <textarea rows="20" cols="75" style="background-color: #f0f0f0;"></textarea>
-        </div>
+            <div class="language">
+                <textarea rows="20" cols="75" type="text" name="q"></textarea>
+                <textarea rows="20" cols="75" type="text" style="background-color: #f0f0f0;"></textarea>
+            </div>
+        </form>
 
     </div>
 </body>

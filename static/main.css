@@ -13,14 +13,14 @@ p{
     padding-left: 30px;
 }
 
-select {
+label {
     float: left;
     width: 200px;
     height: 40px;
     border: 1px solid #dcdcdc;
 	border-radius: 5px;
     text-align: center;
-    margin-right: 50px;
+    margin-right: 80px;
 }
 
 span {
@@ -30,7 +30,7 @@ span {
 
 .index button{
     float: left;
-    width: 100px;
+    width: 150px;
     height: 40px;
     font-size: 18px;
     font-weight: 400;
