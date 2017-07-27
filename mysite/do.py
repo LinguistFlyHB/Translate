@@ -17,4 +17,4 @@ def translate(request):
         message = request.GET['raw']
         result = t.decode(str(message))
         # result = message
-    return render_to_response('../templates/execute.html', {'english': result, 'french': result})
+    return render_to_response('../templates/execute.html', {'english': message, 'french': result})
