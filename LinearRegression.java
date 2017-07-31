@@ -11,7 +11,9 @@ import java.io.File;
  */
 public class LinearRegression {
 
-    public static AbstractClassifier trainModel(String arffFile, int classIndex) throws Exception {
+    private static AbstractClassifier classifier;
+
+    private static AbstractClassifier trainModel(String arffFile, int classIndex) throws Exception {
 
         File inputFile = new File(arffFile); //训练文件
         ArffLoader loader = new ArffLoader();
@@ -26,19 +28,22 @@ public class LinearRegression {
     }
 
     public int getScore() throws Exception {
-         final String arffTrainData = "out.arff";
 
-        AbstractClassifier classifier = trainModel(arffTrainData, 2000000);
-
-        Instance ins = new weka.core.SparseInstance(2000000);
+        Instance ins = new weka.core.SparseInstance(40000);
 
         //TODO
         double vector = 0.0;
-        for(int i=0; i<2000000; i++) {
+        for(int i=0; i<40000; i++) {
             ins.setValue(i, vector);
         }
 
         double star = classifier.classifyInstance(ins);
         return (int)star;
+    }
+
+    public void train() throws Exception {
+
+        final String arffTrainData = "houses.arff";
+        classifier = trainModel(arffTrainData, 40000);
     }
 }
