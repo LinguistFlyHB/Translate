@@ -25,20 +25,20 @@ public class LinearRegression {
         return linear;
     }
 
-    public static void main(String[] args) throws Exception {
+    public int getScore() throws Exception {
+         final String arffTrainData = "out.arff";
 
-        final String arffTrainData = "houses.arff";
+        AbstractClassifier classifier = trainModel(arffTrainData, 2000000);
 
-        AbstractClassifier classifier = trainModel(arffTrainData, 5);
+        Instance ins = new weka.core.SparseInstance(2000000);
 
-        Instance ins = new weka.core.SparseInstance(5);
-        ins.setValue(0, 990.8);
-        ins.setValue(1, 1080.8);
-        ins.setValue(2, 3);
-        ins.setValue(3, 0);
-        ins.setValue(4, 1);
+        //TODO
+        double vector = 0.0;
+        for(int i=0; i<2000000; i++) {
+            ins.setValue(i, vector);
+        }
 
-        double price = classifier.classifyInstance(ins);
-        System.out.println("Price: " + price);
+        double star = classifier.classifyInstance(ins);
+        return (int)star;
     }
 }
