@@ -115,7 +115,7 @@
         init: function (options) {
             var self = this;
             self.options = options;
-            self.initSlider(options);
+            // self.initSlider(options);
             self.checkDisabled();
             $element = self.$element;
             self.containerClass = options.containerClass;
@@ -133,10 +133,10 @@
             self.defaultCaption = options.defaultCaption;
             self.starCaptions = options.starCaptions;
             self.starCaptionClasses = options.starCaptionClasses;
-            self.clearButton = options.clearButton;
-            self.clearButtonTitle = options.clearButtonTitle;
-            self.clearButtonBaseClass = !isEmpty(options.clearButtonBaseClass) ? options.clearButtonBaseClass : 'clear-rating';
-            self.clearButtonActiveClass = !isEmpty(options.clearButtonActiveClass) ? options.clearButtonActiveClass : 'clear-rating-active';
+            // self.clearButton = options.clearButton;
+            // self.clearButtonTitle = options.clearButtonTitle;
+            // self.clearButtonBaseClass = !isEmpty(options.clearButtonBaseClass) ? options.clearButtonBaseClass : 'clear-rating';
+            // self.clearButtonActiveClass = !isEmpty(options.clearButtonActiveClass) ? options.clearButtonActiveClass : 'clear-rating-active';
             self.clearCaption = options.clearCaption;
             self.clearCaptionClass = options.clearCaptionClass;
             self.clearValue = options.clearValue;
@@ -188,14 +188,15 @@
                 self.$container.removeClass('rating-disabled').addClass('rating-active');
             }
 
-            if (typeof self.$caption == 'undefined' && typeof self.$clear == 'undefined') {
-                if (self.rtl) {
-                    self.$container.prepend(caption).append(clear);
-                }
-                else {
-                    self.$container.prepend(clear).append(caption);
-                }
-            }
+            self.$container.append(caption);
+            // if (typeof self.$caption == 'undefined' && typeof self.$clear == '') {
+            //     if (self.rtl) {
+            //         self.$container.prepend(caption).append(clear);
+            //     }
+            //     else {
+            //         self.$container.prepend(clear).append(caption);
+            //     }
+            // }
             if (!isEmpty(self.containerClass)) {
                 self.$container.removeClass(self.containerClass).addClass(self.containerClass);
             }
@@ -245,7 +246,8 @@
             var self = this, precision = getDecimalPlaces(self.step),
                 percentage, val, maxWidth = self.$rating.width();
             percentage = (pos / maxWidth);
-            val = (self.min + Math.ceil(self.diff * percentage / self.step) * self.step);
+            // val = (self.min + Math.ceil(self.diff * percentage / self.step) * self.step);
+            val=4.6;
             if (val < self.min) {
                 val = self.min;
             }
@@ -260,15 +262,21 @@
         },
         setStars: function (pos) {
             var self = this, min = self.min, max = self.max, step = self.step,
-                val = arguments.length ? self.getValueFromPosition(pos) : (isEmpty(self.$element.val()) ? 0 : self.$element.val()),
+                // val = arguments.length ? self.getValueFromPosition(pos) : (isEmpty(self.$element.val()) ? 0 : self.$element.val()),
+                val=4.6,
+                //可以设置caption的数值
+                //只需要设置一下val的值
+
                 width = 0, maxWidth = self.$rating.width(), caption = self.fetchCaption(val);
-            width = (val - min) / max * 100;
+            width = (val) / 5 * 100;
             if (self.rtl) {
                 width = 100 - width;
             }
             self.$element.val(val);
             width += '%';
             self.$stars.css('width', width);
+            //可以设置星星的显示
+
             self.$caption.html(caption);
         },
         clear: function () {
@@ -337,7 +345,7 @@
 
     $.fn.rating.defaults = {
         stars: 5,
-        glyphicon: true,
+        glyphicon: false,
         symbol: null,
         disabled: false,
         readonly: false,
@@ -345,8 +353,9 @@
         size: 'md',
         showClear: true,
         showCaption: true,
-        defaultCaption: '{rating} Stars',
+        defaultCaption: '{rating} ',
         starCaptions: {
+
             0.5: 'Half Star',
             1: 'One Star',
             1.5: 'One & Half Star',
@@ -356,7 +365,7 @@
             3.5: 'Three & Half Stars',
             4: 'Four Stars',
             4.5: 'Four & Half Stars',
-            5: 'Five Stars'
+            5: 'Full'
         },
         starCaptionClasses: {
             0.5: 'label label-danger',
@@ -370,7 +379,7 @@
             4.5: 'label label-success',
             5: 'label label-success'
         },
-        clearButton: '<i class="glyphicon glyphicon-minus-sign"></i>',
+        // clearButton: '<i class="glyphicon glyphicon-minus-sign"></i>',
         clearButtonTitle: 'Clear',
         clearButtonBaseClass: 'clear-rating',
         clearButtonActiveClass: 'clear-rating-active',

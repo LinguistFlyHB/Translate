@@ -4,35 +4,59 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../static/main.css">
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../static/star-rating.css" media="all" rel="stylesheet" type="text/css" />
     <!-- <link href="navstyle.css" rel="stylesheet" type="text/css" /> -->
     <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <link href="../static/star-rating.css" rel="stylesheet" type="text/css"/>
     <script src="../static/star-rating.js" type="text/javascript"></script>
 </head>
-<body>
+<br>
+    <h2>英法翻译 & 软件评分</h2>
     <div class="w1200">
         <form action="/translate" method="get">
             <div class="index">
-                <img src="../static/uk.png" style="height: 35px;margin-left: 10px;"><span> 英语</span>
-                <img src="../static/french.png" style="height: 35px;margin-left: 510px;"><span> 法语</span>
-                <button type="submit" value="Submit" style="font-color:white" onclick="trans();" id="tb">翻译</button>
+                <img src="../static/uk.png" style="height: 35px;margin-left: 10%;"><span> 英语</span>
+                <img src="../static/french.png" style="height: 35px;margin-left: 500px;"><span> 法语</span>
             </div>
 
             <div class="language">
                 <textarea rows="20" cols="75" type="text" name="raw" id="rawLan">{{english}}</textarea>
+                <button type="submit" value="Submit" style="font-color:white" id="tb">翻译</button>
                 <textarea rows="20" cols="75" type="text" id="newLan" style="background-color: #f0f0f0;">{{french}}</textarea>
             </div>
         </form>
+
+        <form action="" method="get">
+            <div style="position: absolute;margin-left: 725px;margin-top: 215px;">
+                <img src="../static/ranking.png" style="height: 35px;"><span> 评分</span>
+            </div>
+            <button type="submit" id="re">测评</button>
+            <input id="rank" value="0" type="number" class="rating" min=0 max=5 step=0.2 data-size="lg">
+        </form>
     </div>
 
-    <div id="sprint2" class="ranking" >
-        <select id="rj">
-            <option>TPO</option>
-            <option>扇贝</option>
-            <option>百词斩</option>
-        </select>
-        <!-- <br></br> -->
-        <input id="rank" value="4" type="number" class="rating" min=0 max=5 step=0.2 data-size="lg">
-    </div>
+{#    <h2>软件评分</h2>#}
+{#    <br></br>#}
+{#    <div id="sprint2" class="ranking" >#}
+{#        <em style="font-size: 19px;margin-left: 12%">待评软件:</em>#}
+{#        <select id="rj">#}
+{#            <option>TPO</option>#}
+{#            <option>扇贝</option>#}
+{#            <option>百词斩</option>#}
+{#        </select>#}
+{#        <input type="text" id="rj">#}
+{#        <button type="button" id="re">测评</button>#}
+{#        <!-- <br></br> -->#}
+{#        <input id="rank" value="0" type="number" class="rating" min=0 max=5 step=0.2 data-size="lg">#}
+{#    </div>#}
 </body>
+<script>
+{#    function trans(){#}
+{#        document.getElementById("rank").style.display="none";#}
+{#        document.getElementById("newLan").style.display="block";#}
+{#    }#}
+{#    function change_view() {#}
+{#        document.getElementById("newLan").style.display="none";#}
+{#        document.getElementById("rank").style.display="block";#}
+{#    }#}
+</script>
 </html>

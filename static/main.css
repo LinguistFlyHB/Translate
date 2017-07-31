@@ -1,6 +1,6 @@
 .w1200{
     width: 100%;
-    height: 600px;
+    height: 532px;
     margin: 0 auto;
 }
 
@@ -29,34 +29,51 @@ span {
     line-height: 40px;
 }
 
-#tb{
+#tb,#re{
     /*float: left;*/
     /*float: right;*/
-    margin-left: 360px;
-    width: 100px;
-    height: 40px;
+    /*margin-left: 450px;*/
+    /*margin-top: 30px;*/
+    width: 80px;
+    height: 35px;
+    color: white;
     font-size: 18px;
     font-weight: 400;
-    background-color: #5584ff;
+    background-color: #77969a;
     border: 1px solid transparent;
 	border-radius: 5px;
     cursor: pointer;
+}
+#tb{
+    margin-left: 450px;
+    position: absolute;
+    margin-top: -60px;
+}
+#re{
+    margin-left: -160px;
+    position: absolute;
+    margin-top: 215px;
+    /*padding-top: -90px;*/
+    /*margin-left: -84px;*/
 }
 button:hover{
     letter-spacing: 3px;
 }
 #rawLan{
-    margin-left: 20px;
+    margin-left: 10%;
+    height:360px;
 }
 #newLan{
+    position: absolute;
     /*float: right;*/
-    margin-left: 40px;
-    /*margin-top: -6px;*/
+    margin-left: 76px;
+    height:150px;
+    margin-top:0px;
 }
 .language{
     float: left;
     width: 1200px;
-    height: 260px;
+    /*height: 240px;*/
     margin-top: 23px;
 }
 
@@ -68,18 +85,55 @@ button:hover{
 }
 select{
     width: 150px;
-    height: 30px;
 }
 #rj{
+    height: 40px;
     font-size: 18px;
-    margin-left: 60px;
+    margin-left: 2%;
 }
 #rj:focus{
     outline: none;
 }
-#rank{
-    float: right;
-
-    margin-left: 200px;
-    margin-top: -10px;
+/*#rank{*/
+    /*display: none;*/
+/*}*/
+select{
+    border: 1px solid #ccc;
+    width: 120px;
+    border-radius: 3px;
+    overflow: hidden;
 }
+
+select {
+    padding: 5px 8px;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+}
+textarea:focus{
+    outline:none;
+}
+textarea{
+    border-radius: 10px;
+}
+h2{
+    color: #787d7b;
+    margin-left: 5%;
+    border-left: solid 8px;
+
+}
+
+/*#re{*/
+    /*margin-left: 20px;*/
+    /*width: 60px;*/
+    /*height: 30px;*/
+    /*color: white;*/
+    /*font-size: 18px;*/
+    /*font-weight: 400;*/
+    /*background-color: #77969a;*/
+    /*border: 1px solid transparent;*/
+	/*border-radius: 5px;*/
+    /*cursor: pointer;*/
+
+/*}*/

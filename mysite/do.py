@@ -9,7 +9,6 @@ import json
 # def execute(request):
 #     return render_to_response('../templates/execute.html')
 
-
 def translate(request):
     result = ''
     request.encoding = 'utf-8'

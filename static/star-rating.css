@@ -14,6 +14,7 @@
  */
 .rating-gly {
     font-family: 'Glyphicons Halflings';
+    /*margin-left: 520px;*/
 }
 .rating-gly-star {
     font-family: 'Glyphicons Halflings';
@@ -26,10 +27,7 @@
 
 .rating-lg .rating-gly-star, .rating-lg .rating-gly-star .rating-stars:before {
     padding-left: 4px;
-}
 
-.rating-xl .rating-gly-star, .rating-xl .rating-gly-star .rating-stars:before {
-    padding-left: 2px;
 }
 
 .rating-active {
@@ -46,6 +44,9 @@
 }
 
 .rating-container {
+    margin-top: -210px;
+
+    margin-left: 57%;
     position: relative;
     vertical-align: middle;
     display: inline-block;
@@ -59,7 +60,7 @@
 
 .rating-container .rating-stars {
     position: absolute;
-    left: 0;
+    /*left: 0;*/
     top: 0;
     white-space: nowrap;
     overflow: hidden;
@@ -105,32 +106,10 @@
     content: attr(data-content);
 }
 
-/**
- * Rating sizes
- */
-.rating-xl {
-    font-size: 4.89em;
-}
-
 .rating-lg {
-    font-size: 3.91em;
+    font-size: 3.1em;
 }
 
-.rating-md {
-    font-size: 3.13em;
-}
-
-.rating-sm {
-    font-size: 2.5em;
-}
-
-.rating-xs {
-    font-size: 2em;
-}
-
-/**
- * Clear rating button
- */
 .star-rating .clear-rating, .star-rating-rtl .clear-rating {
     color: #aaa;
     cursor: not-allowed;
@@ -151,14 +130,12 @@
     padding-right: 5px;
 }
 
-/**
- * Caption
- */
 .star-rating .caption, .star-rating-rtl .caption {
+    margin-top: -200px;
     color: #999;
     display: inline-block;
     vertical-align: middle;
-    font-size: 55%;
+    font-size: 53%;
 }
 
 .star-rating .caption {
