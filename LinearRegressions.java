@@ -7,13 +7,13 @@ import weka.core.converters.ArffLoader;
 import java.io.File;
 
 /**
- * Created by Thpffcj on 2017/7/29.
+ * Created by Thpffcj on 2017/8/1.
  */
-public class LinearRegression {
+public class LinearRegressions {
 
     private static AbstractClassifier classifier;
 
-    private static AbstractClassifier trainModel(String arffFile, int classIndex) throws Exception {
+    private AbstractClassifier trainModel(String arffFile, int classIndex) throws Exception {
 
         File inputFile = new File(arffFile); //训练文件
         ArffLoader loader = new ArffLoader();
@@ -21,20 +21,20 @@ public class LinearRegression {
         Instances insTrain = loader.getDataSet(); // 读入训练文件
         insTrain.setClassIndex(classIndex);
 
-        LinearRegression linear = new LinearRegression();
+        weka.classifiers.functions.LinearRegression linear = new weka.classifiers.functions.LinearRegression();
         linear.buildClassifier(insTrain);//根据训练数据构造分类器
 
         return linear;
     }
 
-    public int getScore() throws Exception {
+    public int getScore(String vector) throws Exception {
 
         Instance ins = new weka.core.SparseInstance(40000);
 
         //TODO
-        double vector = 0.0;
+        String[] s = vector.split(",");
         for(int i=0; i<40000; i++) {
-            ins.setValue(i, vector);
+            ins.setValue(i, Double.valueOf(s[i]));
         }
 
         double star = classifier.classifyInstance(ins);
@@ -43,7 +43,7 @@ public class LinearRegression {
 
     public void train() throws Exception {
 
-        final String arffTrainData = "houses.arff";
+        final String arffTrainData = "out.arff";
         classifier = trainModel(arffTrainData, 40000);
     }
 }
